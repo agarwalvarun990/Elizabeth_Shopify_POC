@@ -6,6 +6,7 @@ This project is created and intended to be used for the [Shopify Theme Developme
 
 
 
+
 [Get the course!](https://weeklyhow.com/) | [Lessons covered](#lessons-covered) |
 [How to use](#how-to-use) | [Not a student?](#not-a-student)
 
