@@ -3,7 +3,7 @@
 
     "sections":{
         "template" : {
-               "type":"example-404"
+               "type":"template-404"
         }      
     },
     "order": ["template"]
