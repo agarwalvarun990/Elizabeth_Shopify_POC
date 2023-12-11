@@ -3,7 +3,7 @@
     "template": {
       "type": "template-404",
       "settings": {
-        "title": "404 ho",
+        "title": "404",
         "subtext_title": "The page that you are looking for i s not found"
       }
     }
