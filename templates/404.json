@@ -1,12 +1,14 @@
 {
-    "name": "Template 404",
-
-    "sections":{
-        "template" : {
-               "type":"template-404"
-        }      
-    },
-    "order": ["template"]
-
-
+  "sections": {
+    "template": {
+      "type": "template-404",
+      "settings": {
+        "title": "404 ho",
+        "subtext_title": "The page that you are looking for i s not found"
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
 }
