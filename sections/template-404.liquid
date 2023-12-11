@@ -1,5 +1,14 @@
-<h1>{{ section.settings.title | t }}<h1>
-<p> {{ section.settings.subtext_title | t }} <p>
+<div class="max-w-md">
+    <div class="text-5xl font-bold my-4">{{section.settings.title }}</div>
+    <div class="my-4">
+        <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title }}</p>
+    </div>
+</div>
+
+
+
+{% comment %} <h1>{{ section.settings.title | t }}<h1>
+<p> {{ section.settings.subtext_title | t }} <p> {% endcomment %}
 
 {% schema %}
 {
