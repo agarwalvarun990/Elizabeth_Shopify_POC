@@ -3,6 +3,13 @@
     <div class="my-4">
         <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title }}</p>
     </div>
+
+<div class="my-4">
+    {% if section.settings.button_url == blank %}
+       {% assign shop_url = section.settings.button_url %}   
+    {% endif %}
+    <a href="{{ shop_url }}">{{ section.settings.button_label }}</a>
+</div>
 </div>
 
 
@@ -30,7 +37,19 @@
        "label": "404 Subtext Title"
 
 
-       }
+       },
+       {
+        "type": "text",
+        "id": "button_label",
+        "default": "Back to homepage",
+        "label": "Button Label"
+       },
+       {
+        "type": "url",
+        "id": "button_label",
+        "label": "Button URL"
+    
+        }
 
 
 
