@@ -11,7 +11,7 @@
             }
 
         },
-        "block_order": ["title"]
+        "block_order": ["title","author"]
       }
 },
 "order": ["template"]
