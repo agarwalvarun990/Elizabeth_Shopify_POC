@@ -1,7 +1,17 @@
 {
     "sections": {
       "template": {
-        "type": "template-article"
+        "type": "template-article",
+        "blocks":{
+            "title": {
+            "type": "article_title"
+            },
+            "author": {
+              "type": "article_author"
+            }
+
+        },
+        "block_order": ["title"]
       }
 },
 "order": ["template"]
