@@ -32,8 +32,23 @@ Hello World
                     <div x-show="open" @click.away="open = false" class="absolute z-10 -ml-5 mt-5 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                       <div class="shadow-lg border ring-black ring-opacity-5 overflow-hidden rounded-lg">
                         <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+
+                          {% for product in collection.products %}
+                            {% if product.featured_image %}
+                                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
+                                
+                            {% endif %}
+                    
+                            <span>{{ product.vendor }}</span>
+                    
+                            <a href="{{ product.url }}">{{ product.title }}</a>
+                    
+                            <p>{{ product.price | money }}</p>
+                        {% else %}
+                            <p>There are no products inside of this collection</p>
+                        {% endfor %}
                         
-                          
+
                           {% for childitem in link.links %}
 
                             <a href="{{ childitem.url }}" class="-m-3 p-3 flex items start rounded-lg hover:bg-gray-100">
@@ -44,20 +59,7 @@ Hello World
                               </div>
                             </a>
 
-                            {% for product in collection.products %}
-                              {% if product.featured_image %}
-                                  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
-                                  
-                              {% endif %}
-                      
-                              <span>{{ product.vendor }}</span>
-                      
-                              <a href="{{ product.url }}">{{ product.title }}</a>
-                      
-                              <p>{{ product.price | money }}</p>
-                          {% else %}
-                              <p>There are no products inside of this collection</p>
-                          {% endfor %}
+
 
                             
                           {% endfor %}
