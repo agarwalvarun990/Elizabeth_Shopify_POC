@@ -45,20 +45,16 @@ Hello World
                       <div class="shadow-lg border ring-black ring-opacity-5 overflow-hidden rounded-lg">
                         <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
 
-                          {% for product in collection.products %}
-                            {% if product.featured_image %}
-                                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
-                                
-                            {% endif %}
-                    
-                            <span>{{ product.vendor }}</span>
-                    
-                            <a href="{{ product.url }}">{{ product.title }}</a>
-                    
-                            <p>{{ product.price | money }}</p>
-                        {% else %}
-                            <p>There are no products inside of this collection</p>
-                        {% endfor %}
+                          {% for product in collections.frontpage.products limit:4 %}
+                            <div>
+                              <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+                              {{ product.price | money }}
+                              {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+                              <a href="{{ product.url | within: collection }}">
+                                <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+                              </a>
+                            </div>
+                          {% endfor %}
                         
 
                           {% for childitem in link.links %}
