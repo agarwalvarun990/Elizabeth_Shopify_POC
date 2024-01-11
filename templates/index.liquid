@@ -1,26 +1,24 @@
  <head>
   <style>
-  h1 {
-      color: green;
-  }
-   
- a + div + div {
+    .hide {
       display: none;
-  }
+    }
+        
    
-  a:hover + div + div {
+    .myDIV:hover + .hide + .hide{
       display: block;
-      color: green;
-      font-size: 25px;
-  }
+      color: red;
+    }
+   
+
   </style>
 </head> 
 
-<a>GeeksforGeeks</a>
+<a class="myDIV">GeeksforGeeks</a>
 
 
 {% for product in collections.frontpage.products limit:4 %}
-    <div>
+    <div class="hide">
       <a href="{{ product.url | within: collection }}">{{ product.title }}</a>cle
       {{ product.price | money }}
       {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
