@@ -5,7 +5,7 @@
     }
         
    
-    .myDIV:hover + .hide + .hide{
+    .myDIV:hover + .hide{
       display: block;
       color: red;
     }
@@ -21,9 +21,9 @@
 
 <a class="myDIV">GeeksforGeeks</a>
 
-
+<div class="hide">
 {% for product in collections.frontpage.products limit:4 %}
-    <div class="hide">
+    <div>
       <a href="{{ product.url | within: collection }}">{{ product.title }}</a>cle
       {{ product.price | money }}
       {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
@@ -31,5 +31,7 @@
         <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
       </a>
     </div>
+  
   {% endfor %}
+</div>
 
