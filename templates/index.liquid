@@ -19,7 +19,7 @@
 <a>GeeksforGeeks</a>
 
 
-{% comment %} {% for product in collections.frontpage.products limit:4 %}
+{% for product in collections.frontpage.products limit:4 %}
     <div>
       <a href="{{ product.url | within: collection }}">{{ product.title }}</a>cle
       {{ product.price | money }}
@@ -28,5 +28,5 @@
         <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
       </a>
     </div>
-  {% endfor %} {% endcomment %}
+  {% endfor %}
 
